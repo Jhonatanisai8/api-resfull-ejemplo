@@ -6,6 +6,7 @@ import com.isai.api_resfull_ejemplo.entity.Local;
 import com.isai.api_resfull_ejemplo.repository.LocalRepository;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class LocalServiceImp
@@ -26,8 +27,25 @@ public class LocalServiceImp
 
     @Override
     public Local updateLocal(Long localID, Local local) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'updateLocal'");
+        Local localSe = repository
+                .findById(localID)
+                .get();
+        if (Objects.nonNull(local.getCode()) &&
+                !"".equalsIgnoreCase(local.getCode())) {
+            localSe.setCode(local.getCode());
+        }
+
+        if (Objects.nonNull(local.getName()) &&
+                !"".equalsIgnoreCase(local.getName())) {
+            localSe.setName(local.getName());
+        }
+
+        if (Objects.nonNull(local.getFloor()) &&
+                !"".equalsIgnoreCase(local.getFloor())) {
+            localSe.setFloor(local.getFloor());
+        }
+
+        return repository.save(localSe);
     }
 
     @Override
