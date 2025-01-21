@@ -2,6 +2,7 @@ package com.isai.api_resfull_ejemplo.controller;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -33,6 +34,11 @@ public class LocalController {
     public Local updateLocal(@PathVariable Long localID,
             @RequestBody Local local) {
         return serviceImp.updateLocal(localID, local);
+    }
+
+    @DeleteMapping("/deleteLocal/{localID}")
+    public void deleteLocal(@PathVariable Long localID){
+        serviceImp.deleteLocal(localID);
     }
 
 }
