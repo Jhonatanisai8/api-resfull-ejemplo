@@ -18,4 +18,21 @@ public class LocalServiceImp
     public List<Local> findAllLocals() {
         return repository.findAll();
     }
+
+    @Override
+    public Local saveLocal(Local local) {
+        return repository.save(local);
+    }
+
+    @Override
+    public Local updateLocal(Long localID, Local local) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'updateLocal'");
+    }
+
+    @Override
+    public void deleteLocal(Long localID) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'deleteLocal'");
+    }
 }
