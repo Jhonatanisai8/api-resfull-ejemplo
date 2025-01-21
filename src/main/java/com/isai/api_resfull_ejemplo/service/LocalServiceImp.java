@@ -50,7 +50,6 @@ public class LocalServiceImp
 
     @Override
     public void deleteLocal(Long localID) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteLocal'");
+        repository.deleteById(localID);
     }
 }
