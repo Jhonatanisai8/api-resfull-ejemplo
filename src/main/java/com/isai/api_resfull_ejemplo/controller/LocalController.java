@@ -1,0 +1,23 @@
+package com.isai.api_resfull_ejemplo.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import com.isai.api_resfull_ejemplo.entity.Local;
+import com.isai.api_resfull_ejemplo.service.LocalServiceImp;
+
+@RestController
+@RequestMapping("/locals")
+public class LocalController {
+
+    @Autowired
+    LocalServiceImp serviceImp;
+
+    @GetMapping("/findAllLocals")
+    public List<Local> getAllLocals() {
+        return serviceImp.findAllLocals();
+    }
+}
