@@ -7,6 +7,7 @@ import com.isai.api_resfull_ejemplo.repository.LocalRepository;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 @Service
 public class LocalServiceImp
@@ -51,5 +52,10 @@ public class LocalServiceImp
     @Override
     public void deleteLocal(Long localID) {
         repository.deleteById(localID);
+    }
+
+    @Override
+    public Optional<Local> findLocalByNameWithJPQL(String name) {
+        return repository.findLocalByNameWithJPQL(name);
     }
 }

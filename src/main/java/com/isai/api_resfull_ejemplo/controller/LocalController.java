@@ -1,6 +1,8 @@
 package com.isai.api_resfull_ejemplo.controller;
 
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,6 +27,11 @@ public class LocalController {
         return serviceImp.findAllLocals();
     }
 
+    @GetMapping("/findLocalByNameWithJPQL/{name}")
+    public Optional<Local> findLocalByNameWithJPQL(@PathVariable String name) {
+        return serviceImp.findLocalByNameWithJPQL(name);
+    }
+
     @PostMapping("/createLocal")
     public Local saveLocal(@RequestBody Local local) {
         return serviceImp.saveLocal(local);
@@ -37,9 +44,9 @@ public class LocalController {
     }
 
     @DeleteMapping("/deleteLocal/{localID}")
-    public String deleteLocal(@PathVariable Long localID){
+    public String deleteLocal(@PathVariable Long localID) {
         serviceImp.deleteLocal(localID);
-        return "Exists Delete By Id: "+localID;
+        return "Exists Delete By Id: " + localID;
     }
 
 }
