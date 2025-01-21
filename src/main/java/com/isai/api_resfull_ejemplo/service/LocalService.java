@@ -6,6 +6,10 @@ import com.isai.api_resfull_ejemplo.entity.Local;
 
 public interface LocalService {
     List<Local> findAllLocals();
-    
+
     Local saveLocal(Local local);
+
+    Local updateLocal(Long localID,Local local);
+
+    void deleteLocal(Long localID);
 }
