@@ -37,6 +37,11 @@ public class LocalController {
         return serviceImp.findByName(name);
     }
 
+    @GetMapping("/findByNameIgnoreCase/{name}")
+    public Optional<Local> findByNameIgnoreCase(@PathVariable String name) {
+        return serviceImp.findByNameIgnoreCase(name);
+    }
+
     @PostMapping("/createLocal")
     public Local saveLocal(@RequestBody Local local) {
         return serviceImp.saveLocal(local);

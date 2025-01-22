@@ -63,4 +63,9 @@ public class LocalServiceImp
     public Optional<Local> findByName(String name) {
         return repository.findByName(name);
     }
+
+    @Override
+    public Optional<Local> findByNameIgnoreCase(String name) {
+        return repository.findByNameIgnoreCase(name);
+    }
 }

@@ -17,4 +17,7 @@ public interface LocalService {
     Optional<Local> findLocalByNameWithJPQL(String name);
 
     Optional<Local> findByName(String name);
+
+    Optional<Local> findByNameIgnoreCase(String name);
+
 }
