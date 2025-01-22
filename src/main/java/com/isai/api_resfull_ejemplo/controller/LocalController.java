@@ -32,6 +32,11 @@ public class LocalController {
         return serviceImp.findLocalByNameWithJPQL(name);
     }
 
+    @GetMapping("/findByName/{name}")
+    public Optional<Local> findByName(@PathVariable String name) {
+        return serviceImp.findByName(name);
+    }
+
     @PostMapping("/createLocal")
     public Local saveLocal(@RequestBody Local local) {
         return serviceImp.saveLocal(local);

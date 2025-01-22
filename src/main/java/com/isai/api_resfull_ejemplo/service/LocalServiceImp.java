@@ -58,4 +58,9 @@ public class LocalServiceImp
     public Optional<Local> findLocalByNameWithJPQL(String name) {
         return repository.findLocalByNameWithJPQL(name);
     }
+
+    @Override
+    public Optional<Local> findByName(String name) {
+        return repository.findByName(name);
+    }
 }
